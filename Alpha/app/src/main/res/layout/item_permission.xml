@@ -4,14 +4,30 @@
     <data>
 
         <variable
+            name="presenter"
+            type="guru.ioio.alpha.TestPermissionActivity" />
+
+        <variable
             name="data"
-            type="guru.ioio.alpha.permission.TestPermissionActivity.PermissionBean" />
+            type="guru.ioio.alpha.TestPermissionActivity.PermissionBean" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="40dp"
+        android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="@{data.name}" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:checked="@={data.isChecked}" />
     </LinearLayout>
 </layout>

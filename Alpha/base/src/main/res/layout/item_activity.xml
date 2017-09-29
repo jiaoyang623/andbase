@@ -9,7 +9,7 @@
 
         <variable
             name="presenter"
-            type="guru.ioio.alpha.MainActivity" />
+            type="guru.ioio.base.ActivityListActivity" />
     </data>
 
     <TextView
