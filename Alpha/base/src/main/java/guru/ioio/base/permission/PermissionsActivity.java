@@ -114,7 +114,7 @@ public class PermissionsActivity extends Activity {
     }
 
     // 显示缺失权限提示
-    private void showMissingPermissionDialog() {
+    protected void showMissingPermissionDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(PermissionsActivity.this);
         builder.setTitle(R.string.help);
         builder.setMessage(R.string.string_help_text);
@@ -123,8 +123,7 @@ public class PermissionsActivity extends Activity {
         builder.setNegativeButton(R.string.quit, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                setResult(PERMISSIONS_DENIED);
-                finish();
+
             }
         });
 
@@ -140,8 +139,13 @@ public class PermissionsActivity extends Activity {
         builder.show();
     }
 
+    protected void returnDeny() {
+        setResult(PERMISSIONS_DENIED);
+        finish();
+    }
+
     // 启动应用的设置
-    private void startAppSettings() {
+    protected void startAppSettings() {
         Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
         intent.setData(Uri.parse(PACKAGE_URL_SCHEME + getPackageName()));
         startActivity(intent);
