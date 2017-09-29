@@ -1,4 +1,4 @@
-package guru.ioio.alpha.base;
+package guru.ioio.base.adapter;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ObservableInt;

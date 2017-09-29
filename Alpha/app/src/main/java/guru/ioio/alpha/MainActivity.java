@@ -11,7 +11,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-import guru.ioio.alpha.base.BindingBaseAdapter;
+import guru.ioio.base.adapter.BindingBaseAdapter;
 import guru.ioio.alpha.databinding.ActivityMainBinding;
 
 
