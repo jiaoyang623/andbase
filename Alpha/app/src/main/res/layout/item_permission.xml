@@ -9,25 +9,33 @@
 
         <variable
             name="data"
-            type="guru.ioio.alpha.TestPermissionActivity.PermissionBean" />
+            type="guru.ioio.alpha.model.PermissionBean" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:clickable="@{!data.isChecked}"
+        android:onClick="@{(v)->presenter.onItemClick(data)}"
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="@{data.name}" />
+            android:maxLines="1"
+            android:text="@{data.name}"
+            android:textColor="#ff000000"
+            android:textSize="16sp" />
 
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:checked="@={data.isChecked}" />
+            android:checked="@{data.isChecked}"
+            android:clickable="false"
+            android:enabled="@{!data.isChecked}" />
     </LinearLayout>
 </layout>
